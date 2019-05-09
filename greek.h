@@ -104,12 +104,12 @@
 #define STD_VAR(NewVar, OriginalVar) constexpr auto& NewVar = std::OriginalVar;
 
 namespace στδ {
-    #ifdef _STRING_
+    #if __has_include(<string>)
     STD_TYPE(κείμενο, string);
 
     #endif
 
-    #ifdef _IOSTREAM_
+    #if __has_include(<iostream>)
     STD_VAR(χεξοδ, cout);
     STD_VAR(χείσ, cin);
     STD_VAR(χσφαλμ, cerr);
